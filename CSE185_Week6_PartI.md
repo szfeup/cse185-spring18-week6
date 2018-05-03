@@ -9,8 +9,7 @@ Today, you will explore some mass spectrometry data from proteins that bind to t
 
 This week we'll be working with Git repositories outside of the Github classroom interface, more like you would in the real research world.
 
-One of the primary features of Git is the ability to have different "branches", or versions of the code being edited simultaneously, perhaps by different people, and then merged back together again when each person is done working on whatever they were doing. The main line is called the "master" branch, but additional branches can diverge from master and be branched in later. See the diagram below, taken from [this helpful tutorial](https://medium.com/@igor_marques/git-workflow-basics-d405746f6205).
-![git branches](https://cdn-images-1.medium.com/max/1600/1*XJmL7fWV4Coxt12AzHeG-A.png).
+One of the primary features of Git is the ability to have different "branches", or versions of the code being edited simultaneously, perhaps by different people, and then merged back together again when each person is done working on whatever they were doing. The main line is called the "master" branch, but additional branches can diverge from master and be branched in later. See [this helpful tutorial](https://medium.com/@igor_marques/git-workflow-basics-d405746f6205).
 
 Let's first start off by clarifying some Git terminology:
 
