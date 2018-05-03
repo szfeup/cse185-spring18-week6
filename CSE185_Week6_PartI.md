@@ -79,13 +79,59 @@ Now switch over to the PRIDE inspector. Go to Open -> Open Files -> and navigate
 Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the load more button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
 
 **In the first spectrum that loaded (spectrum ID 4970), what is the m/z ratio of the most intense peak? (You can see this by hovering your mouse over that peak).**
+
 **In the summary tab, compute the summary charts. Then: what are the two most abundant precursor ion charges?***
 
 ## 4. Convert and filter spectra
 
+The pride inspector lets us visualize the raw data, but to understand which peptides these fragmented ions correspond to, we need to search them against a database of predicted fragmentation spectra for known proteins.
+
+The database we will use is called mascot. It is a free, online server, but it requires a specific format and can only handle 1200 scans at time. Ideally, we would search all of our spectra, but to reduce the size of our file, we will take a subset of spectra with an intermediate number of peaks. The hope is that the data will be rich enough to reconstruct individual peptide sequences, but not dominated by noise from 100s of low-abundance fragments.
+
+We will use the tool `msconvert` from the ProteoWizard suite to convert our data to the correct format and extract only a fraction of the spectra:
+
+```
+./msconvert telomere_ms.mzXML --filter "index [0,1000]" --mgf -e 300_500.mgf 
+```
+
+This filters our data to keep only scans 0-1000. This will output a file (in a new format!) `PRIDE_Exp_Complete_Ac_31251.pride300_500.mgf`, which is a simpler format that mostly contains a list of peaks for each scan. This file can be both analyzed using PRIDE and used to search databases using the Mascot tool.
+
+Go back to the PRIDE inspector and load our filtered `.mgf file.
+
+**How many spectra are in our filtered file?**
+
 ## 5. Search spetra against protein digest databses with mascot
 
+In a web browser, go to the mascot database at http://www.matrixscience.com. Find the free search, then navigate to the MS/MS ions search. Enter:
+
+* Your name, email, and a search title.
+* Select the SwissProt database, as well as "contaminants".
+* Set the taxonomy to Mus Musculus.
+* Set the digestion enzyme to trypsin
+* Allow up to 5 missed digestion sites
+* Add the following fixed modifications: Carbamidomethyl (C)
+* Add the following variable modifications: Acetyl (N-term), Oxidation (M)
+* Set peptide mass tolerance to 10 ppm.
+* Set Fragment mass tolerance to 0.8 Da.
+* Set peptide charge to 2+ and 3+
+* Check monoisotopic
+* Set data format to mascot generic
+* Upload your filtered `.mgf` file.
+* Start search (may take 2-3 minutes)
+
 ## 6. Analyze mascot results
+
+Your search results will include some summary information at the top, and the blue-ish chart will show you the threshold for significance based on how well your spectra agree with the listed peptide sequence.
+
+Beneath this, in the Protein Family Summary, go to the "report builder". You will see a numbered list of protein hits, with columns giving the progein name, match score, and additional info. Click on a family number to see more details about the peptide(s) that were identified for each protein.
+
+**The top hit is a contaminant! What is it? Give one sentence explanation of why this shows up in our list.**
+
+**Sort the list by score. List the top 5 scoring protein hits (not contaminants!)**
+
+**How many peptides were found to match the top hit, NUCL_MOUSE (Nucleolin)?**
+
+**Briefly investigate the function of the top 5 genes. Are any known to be related to telomere function?** (3pts)
 
 **That's it for today! Next time we'll fetch the instructions for part II and learn how to visualize protein structures. The beginning of part 2 is below in Section 7, but don't start working on that until Thursday.**
 
@@ -95,14 +141,16 @@ The second part of this week's tutorial has been added to the main repository, s
 
 Before we start let's fetch those changes to our fork. From your `cse185-spring18-week6` folder on `ieng6`, do:
 ```
-# Configure a "remote" to point to the original repository
+# Configure a "remote" to point to the original repository (you only ever have to do this once)
 git remote add upstream https://github.com/gymreklab/cse185-spring18-week6/
+
 # Fetch changes from "upstream", which is the repository you forked from
+# and merge those into your local master branch (do this every time you need to update changes
+# from the original repo)
 git fetch upstream
-# Checkout your local master branch
 git checkout master
-# Merge changes with upstream master branch
 git merge upstream/master
+
 # Push the changes to Github, then go to the repository on Github to see that the new Part II file is there.
 git push
 ```
