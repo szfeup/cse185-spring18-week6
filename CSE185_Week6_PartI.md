@@ -44,5 +44,67 @@ A couple of notes before moving on:
 * Everyone's repositories are public. If you wanted, you could go look up all of your friend's answers by going to their copy of the repository. Although you may work together, **you are not allowed to go poking around other people's repositories for the assignment**. We're using the honor system here and trusting you.
 * You'll notice the Thursday instructions aren't in the repository yet. The main repository will be updated on Thursday. The first section of Part 2 will be learning how to "fetch" these changes to update your fork.
 
-
 ## 1. Exploring the PRIDE database using the PRIDE inspector
+Just like NCBI hosts the SRA for next generation sequencing data, EMBL-EBI (the European Molecular Biology Laboratory - European Bioinformatics Institute), hosts the PRIDE database for proteomics data from mass spectroscopy. Most proteomics data on PRIDE is stored in some version of an XML format, which is not easy to read directly. So we will use PRIDE’s in-house developed tool, called PRIDE Inspector, for viewing the data in a graphical user interface.
+
+TODO instructions for installing pride - hopefully we can run from the desktops??
+
+## 2. Inspect the raw XML data file
+
+We will be working with the file `public/week6/telomere_ms.mzXML`, which contains MS/MS spectra from proteins isolated from telomere regions. Our goal is to identify which proteins were contained in this mixture. Use:
+
+```
+less -S PATH/TO/telomere_ms.mzXML
+```
+to scroll a bit through this file. This is in an XML format, which be difficult for humans to read. If you've used HTML before some of the syntax of this file might be familiar. This is a particular XML format called [mzXML](https://www.nature.com/articles/nbt1031) developed specifically for representing mass spectrometry data.
+
+The top contains a bit of metadata bout the file, and then there are individual entries for each peptide that entered the mass spec, which is reported as a scan. Because this is tandem MS data, there were two different scan levels. Level 1 reports the m/z peaks for fragments that resulted when the peptide was first ionized to convert it to the gas phase (these fragments are often called "precursors").
+
+In this experiment, the top 9 most abundant peaks from the first scan were subjected to additional fragmentation into smaller pieces with a process called CID (collision induced dissociation). One m/z peak at a time, each group of precursor fragments is accelerated and then the pressure is increased so that the gaseous ions collide with one another and break up. These new, smaller fragments are scanned again in Level 2, to give additional information about each original peptide.
+
+In each reported scan, the m/z ratio and the corresponding intensity (which is proportional to abundance) of each fragment is reported as a sequence of ASCII encoded pairs.
+
+Answer the questions below in the worksheet by manually inspecting the file:
+
+**What level is the first scan?**
+
+**How many peaks are in the first scan?**
+
+**How many scans are in the entire file?** (Hint, `cat telomere_ms.mzXML | grep "scan num="` will be helpful)
+
+## 3. Load PRIDE Inspector and visualize spectra
+
+Now switch over to the PRIDE inspector. Go to Open -> Open Files -> and navigate to the file `public/week6/telomere_ms.mzXML`. It may take a minute or two to load.
+
+Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the load more button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
+
+**In the first spectrum that loaded (spectrum ID 4970), what is the m/z ratio of the most intense peak? (You can see this by hovering your mouse over that peak).**
+**In the summary tab, compute the summary charts. Then: what are the two most abundant precursor ion charges?***
+
+## 4. Convert and filter spectra
+
+## 5. Search spetra against protein digest databses with mascot
+
+## 6. Analyze mascot results
+
+**That's it for today! Next time we'll fetch the instructions for part II and learn how to visualize protein structures. The beginning of part 2 is below in Section 7, but don't start working on that until Thursday.**
+
+## 7. Fetch instructions for Part 2
+
+The second part of this week's tutorial has been added to the main repository, see: https://github.com/gymreklab/cse185-spring18-week6/blob/master/CSE185_Week6_PartII.md
+
+Before we start let's fetch those changes to our fork. From your `cse185-spring18-week6` folder on `ieng6`, do:
+```
+# Configure a "remote" to point to the original repository
+git remote add upstream https://github.com/gymreklab/cse185-spring18-week6/
+# Fetch changes from "upstream", which is the repository you forked from
+git fetch upstream
+# Checkout your local master branch
+git checkout master
+# Merge changes with upstream master branch
+git merge upstream/master
+# Push the changes to Github, then go to the repository on Github to see that the new Part II file is there.
+git push
+```
+
+Once you see the Part II tutorial, continue working from that document.
