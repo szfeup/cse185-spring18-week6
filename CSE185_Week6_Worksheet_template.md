@@ -34,6 +34,6 @@ This worksheet is worth the same amount as a lab report (based on the percent of
 
 **What is the op scoring sequence? How close is it to your guess? Note: neither answer is probably completely correct!** (1 pt)
 
-**Hypothesize why some peaks are missing from our spectrum file.**
+**Hypothesize why some peaks are missing from our spectrum file.** (1 pt)
 
-**Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.**
+**Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.** (1 pt)
