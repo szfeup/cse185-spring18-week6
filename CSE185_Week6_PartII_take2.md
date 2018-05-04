@@ -94,6 +94,7 @@ So, starting with 1958, we can calculate all possible shifts for the y and b ser
 Take a look at the `.mgf` file to see if you have peaks corresponding to any of these masses. Looking at the tail (e.g. `tail -n 30 example_peptide.mgf`) you'll notice a peak around ~1813. That is close to the expected peak for lysine (K) in the b-series! So we can guess that the last amino acid in our peptide is K. For the y-series, we actually should have gotten a peak at ~1845, since the first amino acid in our peptide is I (you already have 2/18 figured out!). That peak isn't in our data though... (biology is messy!).
 
 So we can already start to fill out our table:
+
 | Amino acid | Position (b-series) | Position (y-series) | Peak (b) | Peak (y) |
 |--------|---------|---------|-------|------|
 | I | 1 | 18 | | 1845.923 |
