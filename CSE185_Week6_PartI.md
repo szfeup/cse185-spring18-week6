@@ -1,9 +1,9 @@
 # Week 6: Proteomics (part 1)
 Skills covered: Advanced Git features, mass spec analysis
 
-This week, to give you a small break before we go into final project mode, you won't have to write a lab report. But you will have to go through the lab tutorials and fill in your lab notebook as usual. Instead of writing a report, answer the questions in bold in this tutorial in a worksheet file in the Github repository.
+This week, to give you a small break before we go into final project mode, you won't have to write a lab report. But you will have to go through the lab tutorials and fill in your lab notebook as usual. Instead of writing a report, answer the bolded questions in a worksheet file in your Github repository (see instructions below).
 
-Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
+The goal of this week is to get a gentle introduction to various aspects of protein bioinformatics. Most of our work for this lab will involve exploring datasets using graphical user interfaces (GUIs). Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
 
 ## 0. Forking the Git repository
 
@@ -79,7 +79,7 @@ Click on the "spectrum" tab. The bottom window shows a list of every scan from t
 
 **In the first spectrum that loaded (spectrum ID 4970), what is the m/z ratio of the most intense peak? (You can see this by hovering your mouse over that peak).**
 
-**In the summary tab, compute the summary charts. Then: what are the two most abundant precursor ion charges?***
+**In the summary tab, compute the summary charts. Then: what are the two most abundant precursor ion charges?**
 
 ## 4. Convert and filter spectra
 
@@ -132,7 +132,7 @@ Beneath this, in the Protein Family Summary, go to the "report builder". You wil
 
 **Briefly investigate the function of the top 5 genes. Are any known to be related to telomere function?** (3pts)
 
-**That's it for today! Next time we'll fetch the instructions for part II and learn how to visualize protein structures. The beginning of part 2 is below in Section 7, but don't start working on that until Thursday.**
+***That's it for today! Next time we'll fetch the instructions for part II and learn how to visualize protein structures. The beginning of part 2 is below in Section 7, but don't start working on that until Thursday.***
 
 ## 7. Fetch instructions for Part 2
 
