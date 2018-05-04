@@ -24,18 +24,17 @@ Go to the "Spectrum" tab. There you should see the peaks represented in the `.mg
 
 We will use the spectrum to reconstruct the sequence of the precursor ion. As a hint, our peptide is 18 amino acids long. As you figure out different amino acids in the forward and reverse direction it is a good idea to keep track of them in a table somewhere.
 
-
 As a refresher, refer to the diagram below:
 
-![peptide sequencing][https://github.com/gymreklab/cse185-spring18-week6/blob/master/peptide_seq_example.png]
+![peptide sequencing](https://github.com/gymreklab/cse185-spring18-week6/blob/master/peptide_seq_example.png)
 
 We will walk through the spectrum (from right to left, or heaviest to lightest mass) to determine which amino acid is represented by the distance between each pair of peaks. Recall that after CID, our peptide gets broken up into both "y" type ions (which extend from the C-terminus) and "b" type ions (which extend from the N-terminus). So our resulting spectrum will have peaks corresponding to the mixture of these two series which we'll have to deconvolute: the y-series has peaks for each amino acid read in one direction, and the b-series has peaks reading in the opposite direction. 
 
 Before we get started, notice:
-* There are a ton of peaks of varying abundance. Many of these are noice! In general, the biggest spikes (highest abundance) are real peaks and the tiny ones might not actually represent real pieces of our peptide.
+* There are a ton of peaks of varying abundance. Many of these are noise! In general, the biggest spikes (highest abundance) are real peaks and the tiny ones might not actually represent real pieces of our peptide.
 * Some peaks will be missing altogether. So as we put together this puzzle, you'll have some question marks we'll have to fill in later.
 
-We started with a peptide (the precursor ion) with mass 1958. In PRIDE, zoom in on this region to get a better look at the peaks in this region (which are much smaller and thus difficult to see when we are completely zoomed out). In general the peaks for the highest mass peptides are pretty low abundance. It might be easier to look at the mgf file to better see where some of the lower abundance peaks are.
+We started with a peptide (the precursor ion) with mass 1958. In PRIDE, zoom in on this region to get a better look at the peaks in this region (which are much smaller and thus difficult to see when we are completely zoomed out). In general the peaks for the highest mass peptides are pretty low abundance. It might be easier to look at the `mgf` file to better see where some of the lower abundance peaks are.
 
 To reconstruct the peptide, let's start at the "parent mass" of 1958 and work back from here. We'll use the following table of masses for each amino acid:
 
@@ -169,22 +168,14 @@ This will output candidate peptide sequences ranked by score.
 
 ## 11. Compare to the optimal spectrum.
 
-The original sequence of the peptide is actually IAGIIKVIKSLIEQFTGK. Go to this site: http://db.systemsbiology.net:8080/proteomicsToolkit/FragIonServlet.html to determine the theoretical spectrum for this peptide. Enter the peptide sequence, choos "mono", "+1", "b", and "y". Compare the results to your table above.
+The original sequence of the peptide is actually IAGIIKVIKSLIEQFTGK. Go to this site: http://db.systemsbiology.net:8080/proteomicsToolkit/FragIonServlet.html to determine the theoretical spectrum for this peptide. Enter the peptide sequence, choose "mono", "+1", "b", and "y". Compare the results to your table above.
 
 **Hypothesize why some peaks are missing from our spectrum file.**
 
 **Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.**
 
-## 11. Submit your worksheet!
+## 11. Finish the worksheet
 
-When you've completed the worksheet, make sure your repository is up to date on Github (by doing `git push`).
-
-From the Github site for your repository (e.g. https://github.com/<username>/cse185-spring18-week6), you can submit your assignment by creating a "pull request".
-
-A pull request (PR) will send a request to the repository owners (here, the instructors), to merge your branch into the main master branch. The main repository owners can go over the new content before merging. Another helpful feature of PRs is there is a place for discussion, so that different contributors to a project can discuss new changes before merging. 
-
-Find the button for "New pull request". Follow the instructions on the screen to submit. Once we have merged your PR, you will be able to see your submission in the `submissions/` folder of the main repository.
-
-**Note. As mentioned before, everyone's answers this week will be publicly available. We are trusting that you will not go look at the answers before completing the assignment yourself.**
+When you've completed the worksheet, make sure your repository is up to date on Github (by doing `git push`). This is due at 11am next Tuesday.
 
 ***Acknowledgement: This lab was conceived by Jeramie Watrous.***

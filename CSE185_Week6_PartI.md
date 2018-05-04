@@ -24,19 +24,7 @@ You can now create a "clone" of this repository as we have done in previous week
 git clone https://github.com/<username>/cse185-spring18-week6
 ```
 
-You can commit, push, and pull just like you have done in the past.
-
-To get started with this week's assignment, make a copy of the week6 worksheet template in the `submissions` folder, tell Git to add it to the repository, and update your repository on Github:
-
-```shell
-# Edit <gitusername> to be your Github username
-cp CSE185_Week6_Worksheet_template.md submissions/CSE185_Week6_Worksheet_<gitusername>.md
-git add submissions/CSE185_Week6_Worksheet_<gitusername>.md
-git commit -a -m"added my own git worksheet"
-git push
-```
-
-For today, answer the questons in your copy of the worksheet. On Thursday, there will be instructions for how to create a "pull request" to submit your answers.
+You can commit, push, and pull just like you have done in the past. Put all of your answers in the file `CSE185_Week6_Worksheet.md`. Although as usual there will be no "submission" process, you should have your worksheet done by 11am next Tuesday (May 14).
 
 A couple of notes before moving on:
 
@@ -46,7 +34,7 @@ A couple of notes before moving on:
 ## 1. Exploring the PRIDE database using the PRIDE inspector
 Just like NCBI hosts the SRA for next generation sequencing data, EMBL-EBI (the European Molecular Biology Laboratory - European Bioinformatics Institute), hosts the PRIDE database for proteomics data from mass spectroscopy. Most proteomics data on PRIDE is stored in some version of an XML format, which is not easy to read directly. So we will use PRIDE’s in-house developed tool, called PRIDE Inspector, for viewing the data in a graphical user interface.
 
-TODO instructions for installing pride - hopefully we can run from the desktops??
+You can download the PRIDE inspector here: https://github.com/PRIDE-Toolsuite/pride-inspector.
 
 ## 2. Inspect the raw XML data file
 
