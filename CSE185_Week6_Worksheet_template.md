@@ -37,3 +37,16 @@ TR150 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4889927/
 
 # My link
 http://www.matrixscience.com/cgi/master_results_2.pl?file=..%2Fdata%2F20180503%2FFTmmffcmE.dat;pr.show=reportbuilder;qo.sort=score;qo.sortdir=desc;report=50;sessionID=guest_guestsession
+
+## Part 2: protein structure visualization
+
+**How many total individual protein chains are in the structures you can see? How many total nucleic acid chains?**
+2 protein structures, 2 nucleic acid chains
+
+**What organism is this particular amino acyl tRNA synthetase from? (Hint, try looking up 1N78 at the pdb database online)**
+Thermus thermophilus
+
+**Set the highlighted domains to new cartoon style, and make sure they are a color that stands out. Adjust your display so you have a good view of each domain in one of the complexes and take a screen shot (you may have to click outside of the gnome browser first). Paste this screen shot into your answers.**
+
+**Which is better for making phylogenies of molecules with 30% sequence identity? Protein sequence (amino acids) or DNA sequence (bases) and why? (you must say why for full credit, and may need to research this one)**
+sequence alignments are less reliable as the sequence identity reduces below 30%

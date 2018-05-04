@@ -48,7 +48,7 @@ phylogeny methods.
 
 The translation enzymes you will focus on today called amino-acyl tRNA synthetases. These enzymes ‘charge’ tRNAs with the correct amino acid, which is then delivered to the ribosome and added to a growing protein chain.
 
-Start your exploration of the amino-acyl tRNA synthetases by taking a look at the glutamyl-tRNA synthetase in complex with its tRNA and glutamyl-adenylate (a version of glutamate which has been activated by addition of AMP from ATP). In the MultiSeq window: File > Import Data > check "From files" > navigate to the `public/week6` folder and find the file `1N78.pdb`.
+Start your exploration of the amino-acyl tRNA synthetases by taking a look at the glutamyl-tRNA synthetase in complex with its tRNA and glutamyl-adenylate (a version of glutamate which has been activated by addition of AMP from ATP). In the MultiSeq window: File > Import Data > check "From files" > navigate to the `public/week6` folder and find the file `1N78.pdb`. You might have to tell it to look for `.pdb`, rather than `.fasta`. files.
 
 This should cause 2 things to happen. First, in the MultiSeq window, you will see rows of sequence data corresponding to each macromolecule in the structure. Second, in the Open GL display, you will
 see the structure itself. In this particular structure, the crystallographic unit (the repeating unit that packed into the crystal used for X-ray diffraction) contains two enzyme-tRNA complexes.
