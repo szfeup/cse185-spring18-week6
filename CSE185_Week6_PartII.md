@@ -5,30 +5,27 @@ Today we'll get some practice visualizing protein structures and using structure
 
 ## 8. Access GUI-based software on ieng6 server with VNCgnome
 
-The software we will use this week analysis, VMD (Visual Molecular Dynamics), requires a graphical user interface (because the data is primarily graphical). To access it on the `ieng6` servers, you will have to connect though Virtual Network Computing to a GNOME (GNU Network Object Model Environment) desktop for the ieng6 server that you can control and view at your workstation. Once you have the gnome desktop set up, if you need to work on things that don’t require the GUI, you can continue working at the command line in your original terminal window.
+The software we will use this week analysis, VMD (Visual Molecular Dynamics), requires a graphical user interface (because the data is primarily graphical).
+
+To access it on the `ieng6` servers outside of lab, you will have to connect though Virtual Network Computing to a GNOME (GNU Network Object Model Environment) desktop for the `ieng6` server that you can control and view at your workstation. Once you have the gnome desktop set up, if you need to work on things that don’t require the GUI, you can continue working at the command line in your original terminal window.
 
 ### Mac VNCgnome
 
-* open a terminal window and ssh in as usual
-* run the command below. you will be prompted for your password.
-```shell
-vncgnome -chpw #the first time you log in
-vncgnome -pw #all other times you log in
+* Log into one the `ieng6-###` servers listed [here](https://acms.ucsd.edu/info/vncgnome.html) using a tunnel:
 ```
-
-* open a NEW terminal window (leave the first one open) and ssh in with this command:
+ssh -X -L 5899:localhost:5900 username@ieng6-###.ucsd.edu
 ```
-ssh -L 5899:localhost:5900 username@ieng6-###.ucsd.edu
+* Run
 ```
-
+vncserver
+```
 * connect to the vnc client by clicking Finder>Go>Connect to server, and enter:
 ```
-vnc://localhost:5899
+vnc://localhost:5000
 ```
 
 This will open the gnome window (you will be prompted for your password). If you need to stop the
-vnc session, type `vncgnome -kill` in the same terminal you typed `vncgnome -chpw` in.
-
+vnc session, type `vncserver -kill`.
 
 ### Windows VNCgnome
 Follow the directions here:
@@ -193,5 +190,9 @@ Tools> Phylogenetic Tree > check All Sequences > check Structural Tree using QH 
 **Did the amino-acyl tRNA synthetases with different specificities diverge before or after LUCA (the last universal common ancestor of bacteria, archaea, and eukaryotes)**
 
 **Which tree (sequence-based or structure-based) do you think is more accurate and why?**
+
+## 16. Submit your worksheet!
+
+TODO pull request
 
 **Acknowledgement: Adapted from a lab originally written by Dr. Katie Petrie.**
