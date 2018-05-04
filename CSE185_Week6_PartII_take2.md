@@ -165,7 +165,7 @@ where you will of course have to slightly modify the paths to the `public` direc
 
 This will output candidate peptide sequences ranked by score.
 
-**What is the op scoring sequence? How close is it to your guess? Note: neither answer is probably completely correct!**
+**What is the top scoring sequence? How close is it to your guess? Note: neither answer is probably completely correct!**
 
 ## 11. Compare to the optimal spectrum.
 
@@ -173,7 +173,7 @@ The original sequence of the peptide is actually IAGIIKVIKSLIEQFTGK. Go to this 
 
 **Hypothesize why some peaks are missing from our spectrum file.**
 
-**Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.
+**Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.**
 
 ## 11. Submit your worksheet!
 
