@@ -144,9 +144,38 @@ Your goal in this section is to manually reconstruct as much of the sequence as 
 * You can walk through the peaks in either direction. For example, you can look at the `.mgf` file and find the next peaks. Starting from the tail, there seem to be peaks at ~1776 and ~1755. Those are probably the next peaks in the y- and b-series. Figure out what amino acids those might correspond to, and keep walking backwards.
 * You could also try to first identify the major peaks, then calculate all shifts of nearby peaks to figure out what amino acids those shifts correspond to.
 
-Try to construct as much as you can. You may work with a partner. One of you might want to work from left to right and the other from right to left to go through the peaks and identify likely next amino acids. Fill in the table above as you go.
+Try to construct as much as you can. You may work with a partner. One of you might want to work from left to right and the other from right to left to go through the peaks and identify likely next amino acids. Fill in the table above as you go. Spend at most ~45 minutes on this so you have time for the rest.
 
-## X. Submit your worksheet!
+**Include your table in your worksheet. Explain your answer for at least two more amino acids.**
+ 
+**This was pretty tedious! If you were going to write a program to automate this process, how would you do it? (max 2-3 sentences about your idea.**
+
+## 10. Programmatically determine the peptide sequence
+
+Now, we'll use a program called `pepnovo` (developed here at UCSD!) to programmatically determine the peptide sequence. This tool uses a probabilisitc network to model peptide fragmentation events from mass spec. Run `pepnovo` on our spectrum with the following command:
+
+```
+pepnovo -file public/week6/example_peptide.mgf -model_dir public/week6/Models -model CID_IT_TRYP 
+```
+where you will of course have to slightly modify the paths to the `public` directory. This command took in:
+
+* `-file` gives the `.mgf` file containing all of our peaks
+* `-model CID_IT_TRYP` tells it to model fragmentation based on performing CID on trypsinized fragments, which is how our spectrum was obtained.
+* `-model_dir` tells it to look in a non-standard location for the model files
+
+This will output candidate peptide sequences ranked by score.
+
+**What is the op scoring sequence? How close is it to your guess? Note: neither answer is probably completely correct!**
+
+## 11. Compare to the optimal spectrum.
+
+The original sequence of the peptide is actually IAGIIKVIKSLIEQFTGK. Go to this site: http://db.systemsbiology.net:8080/proteomicsToolkit/FragIonServlet.html to determine the theoretical spectrum for this peptide. Enter the peptide sequence, choos "mono", "+1", "b", and "y". Compare the results to your table above.
+
+**Hypothesize why some peaks are missing from our spectrum file.**
+
+**Suggest a way we could modify our mass spec experiment to distinguish between amino acids with near identical masses, such as Isoleucine and Leucine.
+
+## 11. Submit your worksheet!
 
 When you've completed the worksheet, make sure your repository is up to date on Github (by doing `git push`).
 
