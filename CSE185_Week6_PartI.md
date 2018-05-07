@@ -45,7 +45,7 @@ less -S PATH/TO/telomere_ms.mzXML
 ```
 to scroll a bit through this file. This is in an XML format, which be difficult for humans to read. If you've used HTML before some of the syntax of this file might be familiar. This is a particular XML format called [mzXML](https://www.nature.com/articles/nbt1031) developed specifically for representing mass spectrometry data.
 
-The top contains a bit of metadata bout the file, and then there are individual entries for each peptide that entered the mass spec, which is reported as a scan. Because this is tandem MS data, there were two different scan levels. Level 1 reports the m/z peaks for fragments that resulted when the peptide was first ionized to convert it to the gas phase (these fragments are often called "precursors").
+The top contains a bit of metadata about the file, and then there are individual entries for each peptide that entered the mass spec, which is reported as a scan. Because this is tandem MS data, there were two different scan levels. Level 1 reports the m/z peaks for fragments that resulted when the peptide was first ionized to convert it to the gas phase (these fragments are often called "precursors").
 
 In this experiment, the top 9 most abundant peaks from the first scan were subjected to additional fragmentation into smaller pieces with a process called CID (collision induced dissociation). One m/z peak at a time, each group of precursor fragments is accelerated and then the pressure is increased so that the gaseous ions collide with one another and break up. These new, smaller fragments are scanned again in Level 2, to give additional information about each original peptide.
 
