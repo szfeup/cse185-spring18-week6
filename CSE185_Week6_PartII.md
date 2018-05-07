@@ -12,7 +12,7 @@ The spectra for this peptide is given in `public/week6/example_peptide.mgf`. We 
 * The top says `BEGIN IONS`. The last line says `END IONS`. These act as bookmarks to tell where one spectrum ends and the next begins in the file. Here we only have one spectrum so you only see these once.
 * The next line tells us the mass of the precursor ion, which in this case is 1958.
 * The third line gives the charge. The charge here is just +1, which is convenient since now all of our m/z ratios are just equal to the mass of each ion.
-* The next lines give the peaks of the spectrum. Column 1 gives the m/z ratio (which again, is the same as mass here sinze z=1). Column 2 gives the intensity.
+* The next lines give the peaks of the spectrum. Column 1 gives the m/z ratio (which again, is the same as mass here since z=1). Column 2 gives the intensity.
 
 **How many peaks are in this file? What is the range of m/z ratios? (i.e. min and max). How does the max ion mass here compare to the precursor ion mass? What is the most abundant m/z ratio?**
 
