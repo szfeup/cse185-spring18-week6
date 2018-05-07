@@ -1,9 +1,9 @@
 # Week 6: Proteomics (part 1)
-Skills covered: Advanced Git features, mass spec analysis
+Skills covered: Mass spec analysis
 
 This week, to give you a small break before we go into final project mode, you won't have to write a lab report. But you will have to go through the lab tutorials and fill in your lab notebook as usual. Instead of writing a report, answer the bolded questions in a worksheet file in your Github repository (see instructions below).
 
-The goal of this week is to get a gentle introduction to various aspects of protein bioinformatics. Most of our work for this lab will involve exploring datasets using graphical user interfaces (GUIs). Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
+The goal of this week is to get a gentle introduction to various aspects of protein bioinformatics. Most of our work for this lab will involve exploring datasets using graphical user interfaces (GUIs). Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes in mouse. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
 
 ## 0. Forking the Git repository
 
@@ -15,9 +15,9 @@ Let's first start off by clarifying some Git terminology:
 
 * **Repository**: can be thought of as like a folder that contains all elements for a certain project. For our class, we have had one repository for each assignment.
 * **Clone**: is like a copy of a repository. You make a clone of a repository to create a copy that lives on your computer rather than on the Github server. You can "push" local changes to the main Github repository to keep the clone up to date with what's on Github, as we've been doing in previous labs.
-* **Fork**: is your own copy of another user's repository. When you "fork" someone else's repository, you create a caopy on your own account. This allows you to make changes to your own copy. When you are ready to merge changes with the main repository, you can submit a "pull request" to the original author to update the main repository with your changes. You can also "fetch" updates from the original repository to keep yours up to date. We'll get experience with both of these things this week.
+* **Fork**: is your own copy of another user's repository. When you "fork" someone else's repository, you create a copy on your own account. This allows you to make changes to your own copy. When you are ready to merge changes with the main repository, you can submit a "pull request" to the original author to update the main repository with your changes. You can also "fetch" updates from the original repository to keep yours up to date. We'll get experience with both of these things this week.
 
-This week, you will create a "fork" of the main assignment repository to make your own local copy. You can do this by going to the the repository on Github (https://github.com/gymreklab/cse185-spring18-week6), and clicking the "Fork" button on the top right. Make sure you are signed in to Github before you do this. Wait a couple seconds and your own copy will be made (https://github.com/<username>/cse185-spring18-week6).
+This week, you will create a "fork" of the main assignment repository to make your own local copy. You can do this by going to the the repository on Github (https://github.com/gymreklab/cse185-spring18-week6), and clicking the "Fork" button on the top right. Make sure you are signed in to Github before you do this. Wait a couple seconds and your own copy will be made (`https://github.com/<username>/cse185-spring18-week6`).
 
 You can now create a "clone" of this repository as we have done in previous weeks. On `ieng6` in your course home directory, run:
 ```
@@ -45,7 +45,7 @@ less -S PATH/TO/telomere_ms.mzXML
 ```
 to scroll a bit through this file. This is in an XML format, which be difficult for humans to read. If you've used HTML before some of the syntax of this file might be familiar. This is a particular XML format called [mzXML](https://www.nature.com/articles/nbt1031) developed specifically for representing mass spectrometry data.
 
-The top contains a bit of metadata bout the file, and then there are individual entries for each peptide that entered the mass spec, which is reported as a scan. Because this is tandem MS data, there were two different scan levels. Level 1 reports the m/z peaks for fragments that resulted when the peptide was first ionized to convert it to the gas phase (these fragments are often called "precursors").
+The top contains a bit of metadata about the file, and then there are individual entries for each peptide that entered the mass spec, which is reported as a scan. Because this is tandem MS data, there were two different scan levels. Level 1 reports the m/z peaks for fragments that resulted when the peptide was first ionized to convert it to the gas phase (these fragments are often called "precursors").
 
 In this experiment, the top 9 most abundant peaks from the first scan were subjected to additional fragmentation into smaller pieces with a process called CID (collision induced dissociation). One m/z peak at a time, each group of precursor fragments is accelerated and then the pressure is increased so that the gaseous ions collide with one another and break up. These new, smaller fragments are scanned again in Level 2, to give additional information about each original peptide.
 
@@ -63,7 +63,7 @@ Answer the questions below in the worksheet by manually inspecting the file:
 
 Now switch over to the PRIDE inspector. Go to Open -> Open Files -> and navigate to the file `public/week6/telomere_ms.mzXML`. It may take a minute or two to load.
 
-Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the load more button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
+Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the Load Next button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
 
 **In the first spectrum that loaded (spectrum ID 4970), what is the m/z ratio of the most intense peak? (You can see this by hovering your mouse over that peak).**
 
@@ -78,7 +78,7 @@ The database we will use is called mascot. It is a free, online server, but it r
 We will use the tool `msconvert` from the ProteoWizard suite to convert our data to the correct format and extract only a fraction of the spectra:
 
 ```
-./msconvert telomere_ms.mzXML --filter "index [0,1000]" --mgf -e 300_500.mgf 
+msconvert /PATH/TO/telomere_ms.mzXML --filter "index [0,1000]" --mgf -e 300_500.mgf 
 ```
 
 This filters our data to keep only scans 0-1000. This will output a file (in a new format!) `PRIDE_Exp_Complete_Ac_31251.pride300_500.mgf`, which is a simpler format that mostly contains a list of peaks for each scan. This file can be both analyzed using PRIDE and used to search databases using the Mascot tool.

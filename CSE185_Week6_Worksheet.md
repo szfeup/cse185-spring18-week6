@@ -18,9 +18,11 @@ This worksheet is worth the same amount as a lab report (based on the percent of
 
 **The top hit is a contaminant! What is it? Give one sentence explanation of why this shows up in our list.** (1 pt)
 
+
 **List the top 5 scoring protein hits (not contaminants!)** (1 pt)
 
 **How many peptides were found to match the top hit, NUCL_MOUSE (Nucleolin)?** (1pt)
+
 
 **Briefly investigate the function of the top 3 genes. Are any known to be related to telomere function?** (3pts)
 
