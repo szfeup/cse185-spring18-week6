@@ -143,7 +143,8 @@ Your goal in this section is to manually reconstruct as much of the sequence as 
 * You can walk through the peaks in either direction. For example, you can look at the `.mgf` file and find the next peaks. Starting from the tail, there seem to be peaks at ~1776 and ~1755. Those are probably the next peaks in the y- and b-series. Figure out what amino acids those might correspond to, and keep walking backwards.
 * You could also try to first identify the major peaks, then calculate all shifts of nearby peaks to figure out what amino acids those shifts correspond to.
 
-Try to construct as much as you can. You may work with a partner. One of you might want to work from left to right and the other from right to left to go through the peaks and identify likely next amino acids. Fill in the table above as you go. Spend at most ~45 minutes on this so you have time for the rest.
+Try to construct as much as you can. You may work with a partner. One of you might want to work from left to right and the other from right to left to go through the peaks and identify likely next amino acids. Fill in the table above as you go. 
+Don't spend too much time trying to get all right but focus on understanding. You can compare directly as directed below in #11.Spend at most ~45 minutes on this so you have time for the rest.
 
 **Include your table in your worksheet. Explain your answer for at least two more amino acids.**
  
