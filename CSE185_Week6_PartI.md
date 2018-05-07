@@ -78,7 +78,7 @@ The database we will use is called mascot. It is a free, online server, but it r
 We will use the tool `msconvert` from the ProteoWizard suite to convert our data to the correct format and extract only a fraction of the spectra:
 
 ```
-./msconvert telomere_ms.mzXML --filter "index [0,1000]" --mgf -e 300_500.mgf 
+msconvert /PATH/TO/telomere_ms.mzXML --filter "index [0,1000]" --mgf -e 300_500.mgf 
 ```
 
 This filters our data to keep only scans 0-1000. This will output a file (in a new format!) `PRIDE_Exp_Complete_Ac_31251.pride300_500.mgf`, which is a simpler format that mostly contains a list of peaks for each scan. This file can be both analyzed using PRIDE and used to search databases using the Mascot tool.
