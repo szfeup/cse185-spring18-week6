@@ -63,7 +63,7 @@ Answer the questions below in the worksheet by manually inspecting the file:
 
 Now switch over to the PRIDE inspector. Go to Open -> Open Files -> and navigate to the file `public/week6/telomere_ms.mzXML`. It may take a minute or two to load.
 
-Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the load more button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
+Click on the "spectrum" tab. The bottom window shows a list of every scan from this sample (only the first 100 are shown, you can load more in 100-scan batches with the Load Next button). The top window shows the spectra corresponding to that scan. Each peak represents an individual fragment. The y axis shows its abundance, and the x-axis shows its mass/charge ratio. Use pride inspector (you may have to look around the window or try other tabs) to answer the following questions:
 
 **In the first spectrum that loaded (spectrum ID 4970), what is the m/z ratio of the most intense peak? (You can see this by hovering your mouse over that peak).**
 
