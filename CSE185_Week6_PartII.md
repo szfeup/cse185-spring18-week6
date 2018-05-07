@@ -1,5 +1,5 @@
 # Week 6: Proteomics (part 2)
-Skills covered: More Git features, more mass spec, protein sequencing
+Skills covered: More mass spec, protein sequencing
 
 On Tuesday, we were introduced to mass spec data and different tools for manipulating it. Today, we'll dig a bit deeper and learn how to reconstruct the sequence of a short peptide given it's spectrum.
 
