@@ -1,9 +1,9 @@
 # Week 6: Proteomics (part 1)
-Skills covered: Advanced Git features, mass spec analysis
+Skills covered: Mass spec analysis
 
 This week, to give you a small break before we go into final project mode, you won't have to write a lab report. But you will have to go through the lab tutorials and fill in your lab notebook as usual. Instead of writing a report, answer the bolded questions in a worksheet file in your Github repository (see instructions below).
 
-The goal of this week is to get a gentle introduction to various aspects of protein bioinformatics. Most of our work for this lab will involve exploring datasets using graphical user interfaces (GUIs). Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
+The goal of this week is to get a gentle introduction to various aspects of protein bioinformatics. Most of our work for this lab will involve exploring datasets using graphical user interfaces (GUIs). Today, you will explore some mass spectrometry data from proteins that bind to the telomere regions of chromosomes in mouse. On Thursday, we'll explore and compare the structure of various proteins as they have evolved over time.
 
 ## 0. Forking the Git repository
 
